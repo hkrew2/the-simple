@@ -325,11 +325,12 @@ left: 20px;
         box-sizing: border-box; /* ضمان تناسب الحجم */
         border-radius: 15px;
         margin-bottom: 10px;
+        padding-bottom: 20px;
          /* تقليل الحواف */
     }
       .card img{
      width: 150px;
-     height: 50%;
+     height: 60%;
       }
 .wasf-card a{
     font-size: 15px;
@@ -337,6 +338,7 @@ left: 20px;
 .addToCart{
 font-size: 12px;
 margin: 0;
+padding: 0;
 
 }
 .card-price{
@@ -346,6 +348,8 @@ font-size: 13px;
 
 .card-buy{
     font-size: 11px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .footer{
