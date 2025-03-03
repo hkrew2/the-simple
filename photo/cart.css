@@ -1,0 +1,92 @@
+class ShoppingCart {
+  constructor() {
+    this.cartItems = []; // تخزين المنتجات في السلة
+    this.cartSidebar = document.getElementById("cartSidebar");
+    this.cartList = document.getElementById("cartList");
+
+    this.init();
+  }
+
+  // بدء الوظائف
+  init() {
+    this.setupEventListeners();
+  }
+
+  // تفعيل الأحداث
+  setupEventListeners() {
+    // حدث فتح السلة
+    document.getElementById("openCart").addEventListener("click", () => {
+      this.openCart();
+    });
+
+    // حدث إغلاق السلة
+    document.getElementById("closeCart").addEventListener("click", () => {
+      this.closeCart();
+    });
+
+    // حدث إضافة أو إزالة المنتجات للسلة
+    const addToCartButtons = document.querySelectorAll(".addToCart");
+    addToCartButtons.forEach((button) => {
+      // التعامل مع الحدث على الزر بالكامل حتى لو كان الضغط على النص فقط
+      button.addEventListener("click", (e) => {
+        // نستخرج المنتج من خاصية data-product
+        const productName = e.target.dataset.product || e.target.closest(".addToCart").dataset.product;
+        this.toggleCart(productName, e.target); // toggle لإضافة أو إزالة المنتج
+      });
+    });
+  }
+
+  // فتح السلة
+  openCart() {
+    this.cartSidebar.classList.add("open"); // إظهار السلة فوراً
+  }
+
+  // إغلاق السلة
+  closeCart() {
+    this.cartSidebar.classList.remove("open"); // إخفاء السلة
+  }
+
+  // إضافة أو إزالة منتج من السلة
+  toggleCart(productName, button) {
+    // تحقق إذا كان المنتج موجود في السلة
+    if (this.cartItems.includes(productName)) {
+      // إزالة المنتج من السلة
+      this.cartItems = this.cartItems.filter(item => item !== productName);
+      button.style.color = "black"; // إعادة اللون الأسود
+    // استرجاع النص القديم
+    } else {
+      // إضافة المنتج إلى السلة
+      this.cartItems.push(productName);
+      button.style.color = "red"; // تغيير اللون إلى أسود
+     // تغيير النص داخل الزر
+    }
+    this.renderCart(); // تحديث السلة
+  }
+
+  // عرض محتويات السلة
+  renderCart() {
+    this.cartList.innerHTML = ""; // تأكد من تفريغ القائمة أولاً
+    if (this.cartItems.length > 0) {
+      this.cartItems.forEach((item) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = item; // إضافة المنتج داخل العنصر
+        this.cartList.appendChild(listItem); // إضافته للقائمة
+      });
+    } else {
+      // إضافة رسالة إذا كانت السلة فارغة
+      const emptyMessage = document.createElement("li");
+     
+      this.cartList.appendChild(emptyMessage);
+    }
+  }
+}
+
+// إنشاء الكلاس عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", () => {
+  new ShoppingCart();
+});
+
+
+
+
+

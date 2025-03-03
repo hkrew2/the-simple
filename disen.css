@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@keyframes slide-fwd-center{0%{transform:translateZ(0)}100%{transform:translateZ(160px)}}
+
+*{
+    font-family: "Ubuntu Mono", monospace;
+}
+body{
+    
+    background-color:#1d2023;
+}
+
+
+
+.container{
+margin-top: 25px;
+}
+
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+.logo{
+  font-size: 15px;
+  text-transform: uppercase; 
+    color: #000;
+    padding-left: 60px;
+    padding-bottom: 10px;
+    transition: 0.7s  ease;
+}
+/* تحسين تخطيط الموقع على الشاشات الصغيرة */
+@media (max-width: 768px) {
+ .logo{
+    font-size: 13px;
+    padding-left: 30px;
+ }
+ 
+ }  
+
+
+
+ul{
+   padding-right: 20px;
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly ;
+    font-size:70px;
+    padding-top:10px ;
+    color: black;
+  
+
+}
+ul a{
+    border-bottom:2px solid transparent ;
+}
+
+header{
+    background-color:#fff;
+    border-radius: 50px;
+    height:10px;
+}
+
+
+
+
+
+.search{
+    transition: 0.7s ease;
+    color: #000;
+    width:30%;
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly ;
+    font-size:25px;
+    padding-top:8px ;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.search:hover{
+    transform: scale(1.1);
+}
+
+
+.accont{
+    transition: 0.7s ease;
+    color: #000;
+    width:30%;
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly ;
+    font-size:25px;
+    padding-top:8px ;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+.accont:hover{
+    transform: scale(1.1);
+}
+
+
+.cart{
+    transition: 0.7s ease;
+    color: #000;
+    width:30%;
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly ;
+    font-size:25px;
+    padding-top:8px ;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border: none;
+    background: none;
+   
+}
+.cart:hover{
+    transform: scale(1.1);
+}
+
+/* start card */
+
+@media (max-width: 600px) {
+    .card {
+      width: 100%;
+      box-sizing: border-box; /* جعل الكارت بعرض كامل عند تصغير الشاشة جدًا */
+    }
+}
+.contenr-laps{
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-right:25px ;
+    margin-top: 40px;
+}
+
+.contenr-laps {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 20px; 
+   
+}
+
+
+.card{
+    padding-top: 20px;
+    margin: 8px;
+    color: #fff;
+    border: #36383d solid 2px;
+    background-color: #292c31;
+    padding-right: 12px;
+    padding-bottom: 10px;
+  border-radius: 30px;
+  transition: 0.7s ease;
+animation-name: card;
+animation-duration: 2s;
+animation-delay: 0.10s;
+transition: all 0.3s ease-in-out;
+}
+
+@keyframes card{
+    from{
+transform: scale(0.1);
+animation:grow 2s forwards ;
+    }
+    to{
+transform: scale(1);
+    }
+}
+
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+
+.card img {
+    border-radius: 30px;
+    width: 260px;
+    height: 50%;
+    padding-left: 10px;
+}
+
+
+.contenr-laps img{
+    width: 260px;
+    height: 60%;
+}
+
+
+
+.wasf-card{
+font-size: medium;
+text-align: center;
+padding-left:20px ;
+}
+
+.wasf-card a{
+  color: #fff;
+  font-size: 23px;
+  font-family: "Jacquard 12", serif;
+  font-family: "Silkscreen", serif;
+  font-weight: 400;
+  font-style: normal;
+ }
+ 
+.footer{
+text-align: center;
+background-color:#36383d;
+padding: 10px;
+margin-left: 20px;
+border-radius: 25px;
+border: #45464a solid 2px;
+color: #fff;
+}
+
+.card-price{
+    margin-right:20px;}
+
+
+.addToCart{
+background: none;
+border: none;
+color: #fff;
+padding-left: 15px;
+font-size: 18px;
+margin-right: 20px;
+}
+
+
+.card-buy{
+    background: #1d2023;
+   
+    border-radius: 20px;
+    color: #fff;
+    font-size: 15px;
+}
+
+
+
+.sidebar h3{
+    text-align: center;
+}
+
+
+  /* السلة الجانبية */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0; /* دائمًا تظهر السلة على اليمين */
+    width: 25%;  /* عرض السلة نصف عرض الصفحة */
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: none;  /* إخفاء السلة عند تحميل الصفحة */
+    overflow-y: auto;
+  }
+  
+  .sidebar.open {
+    display: block; /* عند فتح السلة سيتم عرضها */
+  }
+  
+  .sidebar button {
+border: none;
+background: none;
+color: black;
+border: none;
+cursor: pointer;
+font-size: 25px;
+position: absolute;
+top: 20px;
+left: 20px;
+  }
+  
+  #cartList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #cartList li {
+    margin: 10px 0;
+  }
+  
+
+  #cartList img {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 50%;
+    width: 200px;
+    
+  }
+
+
+ 
+
+
+  @media (max-width: 600px) {
+    .contenr-laps {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* جعل الكروت في صفين */
+        gap: 10px; /* تقليل المسافة بين الكروت */
+        padding: 5px; /* تقليل الهوامش الداخلية */
+    padding-top: 30px;
+        margin: 0;
+    }
+
+    .card {
+        width: 100%; /* جعل الكرت يأخذ كامل العمود */
+        margin: 0; /* إزالة الهوامش */
+        padding: 8px; /* تقليل المسافات الداخلية */
+        box-sizing: border-box; /* ضمان تناسب الحجم */
+        border-radius: 15px;
+        margin-bottom: 10px;
+         /* تقليل الحواف */
+    }
+      .card img{
+     width: 150px;
+     height: 50%;
+      }
+.wasf-card a{
+    font-size: 15px;
+}
+.addToCart{
+font-size: 12px;
+margin: 0;
+
+}
+.card-price{
+margin: 0;
+font-size: 13px;
+}
+
+.card-buy{
+    font-size: 11px;
+}
+
+.footer{
+    padding: 5px;
+    margin: 0;
+    
+}
+
+
+
+}
